@@ -15,5 +15,6 @@
         android:text="Mostrar Alert"
         android:id="@+id/btnShowAlert"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="btnShowAlert_click" />
 </RelativeLayout>
