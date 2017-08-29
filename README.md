@@ -9,3 +9,7 @@ En este repositorio se encuentran varias ramas que parten de `master` que es la 
 Cada rama posee un Readme con una explicación de lo que hace dicha rama.
 
 Have fun! :)
+
+## Rama master
+
+En esta rama se encuentra una app de Android sencilla donde solo se muestra un mensaje por pantalla al presionar un botón.
