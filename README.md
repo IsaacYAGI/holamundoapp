@@ -9,3 +9,10 @@ En este repositorio se encuentran varias ramas que parten de `master` que es la 
 Cada rama posee un Readme con una explicación de lo que hace dicha rama.
 
 Have fun! :)
+
+## Rama obtener-numero-telefono
+
+- En esta rama se encuentra una app de Android muy básica que lee el número de teléfono del dispositivo configurado en Settings -> About Phone -> Status -> My phone Number. 
+- Si no se encuentra configurado se muestra entonces lo que devuelva el metodo `getSubscriberId()`.
+- Si no retorna nada, entonces muestra el mensaje: 
+> NO SE ENCONTRO EL NUMERO DE TELEFONO
