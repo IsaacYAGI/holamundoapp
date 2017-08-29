@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +17,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnShowAlert_click(View vista){
 
-        showAlert("Mensaje a mostrar","Mensaje");
+        String numTlf = obtenerNumeroCelular();
+        if (numTlf.isEmpty() || numTlf == null){
+            numTlf = obtenerNumeroDeSubscriptor();
+            if (numTlf.isEmpty() || numTlf == null)
+                numTlf = "NO SE ENCONTRO EL NUMERO DE TELEFONO";
+
+        }
+
+        showAlert("Mensaje a mostrar","El numero de telefono es: " + numTlf);
     }
 
     public void showAlert(String titulo, String mensaje){
@@ -30,5 +39,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         msjAD.show();
+    }
+
+    public String obtenerNumeroCelular(){
+        TelephonyManager mTelephonyManager;
+        mTelephonyManager = (TelephonyManager) getSystemService(this.TELEPHONY_SERVICE);
+        return (String) mTelephonyManager.getLine1Number();
+        //return "";
+    }
+
+    public String obtenerNumeroDeSubscriptor(){
+        TelephonyManager mTelephonyManager;
+        mTelephonyManager = (TelephonyManager) getSystemService(this.TELEPHONY_SERVICE);
+        return (String) mTelephonyManager.getSubscriberId();
+        //return "";
     }
 }
